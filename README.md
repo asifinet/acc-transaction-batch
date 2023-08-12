@@ -381,17 +381,17 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
 Class Diagram:
 
 Here's a simplified class diagram based on the information you've provided about your application's entities:
-      +-----------------------+
-      |   Transaction         |
-      +-----------------------+
-      | id: Long              |
-      | accountNumber: String |
-      | trxAmount: BigDecimal |
-      | description: String   |
-      | trxDate: LocalDate    |
-      | trxTime: LocalTime    |
-      | customerId: String    |
-      +-----------------------+
+          +-----------------------+
+          |   Transaction         |
+          +-----------------------+
+          | id: Long              |
+          | accountNumber: String |
+          | trxAmount: BigDecimal |
+          | description: String   |
+          | trxDate: LocalDate    |
+          | trxTime: LocalTime    |
+          | customerId: String    |
+          +-----------------------+
       Activity Diagram:
       Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
@@ -458,48 +458,48 @@ Here's a simplified class diagram based on the information you've provided about
             |
             V
         [User Initiates Concurrent Update]
-                |
-                V
-    [Check If Data Exists]
-    |
-    |   [Yes]
-    |   |
-    |   V
-    |   [Acquire Pessimistic Lock]
-    |   |
-    |   V
-    |   [Create Multiple Update Requests]
-    |   |
-    |   V
-    |   [Create Worker Threads]
-    |   |
-    |   |   [Thread 1]
-    |   |   |
-    |   |   V
-    |   |   [Execute Update Request 1]
-    |   |   |
-    |   |
-    |   |   ...
-    |   |
-    |   |   [Thread N]
-    |   |   |
-    |   |   V
-    |   |   [Execute Update Request N]
-    |   |   |
-    |   |
-    |   V
-    |   [Release Pessimistic Lock]
-    |
-    |   [No]
-    |   |
-    |   V
-    |   [Display Data Not Found Message]
-    |
-    V
-    [Display Concurrent Update Results]
-                |
-                V
-                End   
+                    |
+                    V
+        [Check If Data Exists]
+        |
+        |   [Yes]
+        |   |
+        |   V
+        |   [Acquire Pessimistic Lock]
+        |   |
+        |   V
+        |   [Create Multiple Update Requests]
+        |   |
+        |   V
+        |   [Create Worker Threads]
+        |   |
+        |   |   [Thread 1]
+        |   |   |
+        |   |   V
+            |   |   [Execute Update Request 1]
+        |   |   |
+        |   |
+        |   |   ...
+        |   |
+        |   |   [Thread N]
+        |   |   |
+        |   |   V
+        |   |   [Execute Update Request N]
+        |   |   |
+        |   |
+        |   V
+        |   [Release Pessimistic Lock]
+        |
+        |   [No]
+        |   |
+        |   V
+        |   [Display Data Not Found Message]
+        |
+        V
+        [Display Concurrent Update Results]
+                    |
+                    V
+                    End   
 
 
 Contributors
