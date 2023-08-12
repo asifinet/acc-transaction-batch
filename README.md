@@ -450,8 +450,6 @@ Here's a high-level activity diagram that represents the flow of a typical trans
                    v
                   End
 
-
-
 ============================================================================
 Class Diagram: of FileProcessingJobConfig
 
