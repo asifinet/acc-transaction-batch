@@ -392,10 +392,8 @@ Here's a simplified class diagram based on the information you've provided about
       | trxTime: LocalTime    |
       | customerId: String    |
       +-----------------------+
-
-Activity Diagram:
-
-Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
+      Activity Diagram:
+      Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
                   Start
                    |
