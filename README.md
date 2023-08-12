@@ -430,39 +430,36 @@ Here's a simplified class diagram based on the information you've provided about
                             | + get(stepName)  |
                             +--------------+
 
-
-
-
-    3. Activity Diagram:
+   3. Activity Diagram.
       Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
-
-                  Start
-                   |
-                   v
-           [Request Received]
-                   |
-                   v
-        +----------------------+
-        |    Process Request   |
-        +----------------------+
-                   |
-                   v
-     +---------------------------+
-     | Start Reading input file  |
-     +---------------------------+
-                  |
-                  v              
-        +----------------------+
-        | Transform Transaction |
-        +----------------------+
-                   |
-                   v
-        +----------------------+
-        |   Save into H2 DB    |
-        +----------------------+
-                   |
-                   v
-                  End
+                    
+                                      Start
+                                       |
+                                       v
+                               [Request Received]
+                                       |
+                                       v
+                            +----------------------+
+                            |    Process Request   |
+                            +----------------------+
+                                       |
+                                       v
+                         +---------------------------+
+                         | Start Reading input file  |
+                         +---------------------------+
+                                      |
+                                      v              
+                            +----------------------+
+                            | Transform Transaction |
+                            +----------------------+
+                                       |
+                                       v
+                            +----------------------+
+                            |   Save into H2 DB    |
+                            +----------------------+
+                                       |
+                                       v
+                                      End
 
 4. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
 
@@ -496,7 +493,7 @@ Here's a simplified class diagram based on the information you've provided about
                                     V
                                     End
 
-6. Activity Diagram for updating data concurrently
+5. Activity Diagram for updating data concurrently
                                               
                                              Start
                                                 |
