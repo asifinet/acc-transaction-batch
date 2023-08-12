@@ -399,38 +399,38 @@ Here's a simplified class diagram based on the information you've provided about
           
 2. Class Diagram: for Spring Batch configuration related to file processing.
    
-                             +----------------------+
-                            | FileProcessingJobConfig |
-                            +----------------------+
-                            | - jobBuilderFactory  |
-                            | - stepBuilderFactory |
-                            | - transactionrepository |
-                            +----------------------+
-                            | + fileProcessingJob() |
-                            | + processFileStep()  |
-                            | + fileItemReader()   |
-                            | + transactionItemProcessor() |
-                            | + transactionItemWriter() |
-                            +----------------------+
-                            
-                                   ▲
-                                   |
-                                   |
-                            +--------------+
-                            | JobBuilderFactory |
-                            +--------------+
-                            | + get(jobName)  |
-                            +--------------+
-                                    ▲
-                                    |
-                                    |
-                            +--------------+
-                            | StepBuilderFactory|
-                            +--------------+
-                            | + get(stepName)  |
-                            +--------------+
+                     +----------------------+
+                    | FileProcessingJobConfig |
+                    +----------------------+
+                    | - jobBuilderFactory  |
+                    | - stepBuilderFactory |
+                    | - transactionrepository |
+                    +----------------------+
+                    | + fileProcessingJob() |
+                    | + processFileStep()  |
+                    | + fileItemReader()   |
+                    | + transactionItemProcessor() |
+                    | + transactionItemWriter() |
+                    +----------------------+
+                    
+                           ▲
+                           |
+                           |
+                    +--------------+
+                    | JobBuilderFactory |
+                    +--------------+
+                    | + get(jobName)  |
+                    +--------------+
+                            ▲
+                            |
+                            |
+                    +--------------+
+                    | StepBuilderFactory|
+                    +--------------+
+                    | + get(stepName)  |
+                    +--------------+
 
-   3. Activity Diagram.
+3 Activity Diagram.
       Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
                     
                                       Start
