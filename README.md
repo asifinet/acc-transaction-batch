@@ -424,52 +424,47 @@ Here's a high-level activity diagram that represents the flow of a typical trans
                    |
                    v
                   End
-
-2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
-
-Start
-|
-V
-[User Input Placeholder]
-|   |   |   |
-|   |   V   V
-|   |   [Customer Id]
-|   |   |   |
-|   |   |   V
-|   |   |   [Retrieve Data by Customer Id]
-|   |   |
-|   |   V
-|   |   [Description]
-|   |   |   |
-|   |   |   V
-|   |   |   [Retrieve Data by Description]
-|   |   |
-|   |   V
-|   |   [Account Number]
-|   |       |
-|   |       V
-|   |       [Retrieve Data by Account Number]
-|
-V
-[Display Retrieved Data]
-|
-V
-End
-
-3. Activity Diagram for updating data concurrently
-
-Start
-|
-V
-[User Initiates Concurrent Update]
-|
-V
-[Check If Data Exists]
-|
-|   [Yes]
-|   |
-|   V
-|   [Acquire Pessimistic Lock]
+                  2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
+                  |
+                  V
+        [User Input Placeholder]
+            |   |   |   |
+            |   |   V   V
+            |   |   [Customer Id]
+            |   |   |   |
+            |   |   |   V
+            |   |   |   [Retrieve Data by Customer Id]
+            |   |   |
+            |   |   V
+            |   |   [Description]
+            |   |   |   |
+            |   |   |   V
+            |   |   |   [Retrieve Data by Description]
+            |   |   |
+            |   |   V
+            |   |   [Account Number]
+            |   |       |
+            |   |       V
+            |   |       [Retrieve Data by Account Number]
+            |
+            V
+            [Display Retrieved Data]
+            |
+            V
+            End
+            3. Activity Diagram for updating data concurrently
+            Start
+            |
+            V
+    [User Initiates Concurrent Update]
+    |
+    V
+ [Check If Data Exists]
+   |
+   |   [Yes]
+   |   |
+   |   V
+   |   [Acquire Pessimistic Lock]
 |   |
 |   V
 |   [Create Multiple Update Requests]
