@@ -32,10 +32,6 @@ public class Transaction implements Serializable {
 	private String description;
 	private LocalDate trxDate;
 	private LocalTime trxTime;
-	private String customerId;
-	
-	@Version
-    private Long version;
-	
+	private String customerId;	
 
 }
