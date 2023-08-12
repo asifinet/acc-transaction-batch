@@ -392,7 +392,11 @@ Here's a simplified class diagram based on the information you've provided about
           | trxTime: LocalTime    |
           | customerId: String    |
           +-----------------------+
-1. Class Diagram: for Spring Batch configuration related to file processing.
+
+
+
+          
+2. Class Diagram: for Spring Batch configuration related to file processing.
    
                              +----------------------+
                             | FileProcessingJobConfig |
