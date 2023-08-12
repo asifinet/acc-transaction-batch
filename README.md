@@ -381,21 +381,19 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
 Class Diagram:
 
 Here's a simplified class diagram based on the information you've provided about your application's entities:
-+------------------+
-|   Transaction    |
-+------------------+
-| id: Long         |
-| accountNumber: String |
-| trxAmount: BigDecimal |
-| description: String |
-| trxDate: LocalDate |
-| trxTime: LocalTime |
-| customerId: String |
-+------------------+
-
-
-Activity Diagram:
-Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
+      +-----------------------+
+      |   Transaction         |
+      +-----------------------+
+      | id: Long              |
+      | accountNumber: String |
+      | trxAmount: BigDecimal |
+      | description: String   |
+      | trxDate: LocalDate    |
+      | trxTime: LocalTime    |
+      | customerId: String    |
+      +-----------------------+
+      Activity Diagram:
+      Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
                   Start
                    |
