@@ -422,7 +422,10 @@ Here's a simplified class diagram based on the information you've provided about
                    |
                    v
                   End
-                  2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
+
+
+
+2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
                   |
                   V
         [User Input Placeholder]
@@ -454,50 +457,52 @@ Here's a simplified class diagram based on the information you've provided about
 
 3. Activity Diagram for updating data concurrently
           
-          Start
-            |
-            V
-        [User Initiates Concurrent Update]
-                    |
-                    V                                                                                                                                                                             [Check If Data Exists]
-        |                                                                                                                                                                                        |   [Yes]
-        |   |
-        |   V
-        |   [Acquire Pessimistic Lock]
-        |   |
-        |   V
-        |   [Create Multiple Update Requests]
-        |   |
-        |   V
-        |   [Create Worker Threads]
-        |   |
-        |   |   [Thread 1]
-        |   |   |
-        |   |   V
-            |   |   [Execute Update Request 1]
-        |   |   |
-        |   |
-        |   |   ...
-        |   |
-        |   |   [Thread N]
-        |   |   |
-        |   |   V
-        |   |   [Execute Update Request N]
-        |   |   |
-        |   |
-        |   V
-        |   [Release Pessimistic Lock]
-        |
-        |   [No]
-        |   |
-        |   V
-        |   [Display Data Not Found Message]
-        |
-        V
-        [Display Concurrent Update Results]
-                    |
-                    V
-                    End   
+ Start
+|
+V
+[User Initiates Concurrent Update]
+|
+V
+[Check If Data Exists]
+|
+|   [Yes]
+|   |
+|   V
+|   [Acquire Pessimistic Lock]
+|   |
+|   V
+|   [Create Multiple Update Requests]
+|   |
+|   V
+|   [Create Worker Threads]
+|   |
+|   |   [Thread 1]
+|   |   |
+|   |   V
+|   |   [Execute Update Request 1]
+|   |   |
+|   |
+|   |   ...
+|   |
+|   |   [Thread N]
+|   |   |
+|   |   V
+|   |   [Execute Update Request N]
+|   |   |
+|   |
+|   V
+|   [Release Pessimistic Lock]
+|
+|   [No]
+|   |
+|   V
+|   [Display Data Not Found Message]
+|
+V
+[Display Concurrent Update Results]
+|
+V
+End
 
 
 Contributors
