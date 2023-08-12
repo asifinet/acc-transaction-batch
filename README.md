@@ -393,9 +393,41 @@ Here's a simplified class diagram based on the information you've provided about
 | customerId: String |
 +------------------+
 
+  Class Diagram: of FileProcessingJobConfig
+  +-------------------------+
+  | FileProcessingJobConfig |
+  +-------------------------+
+  | - jobBuilderFactory     |
+  | - stepBuilderFactory    |
+  | - transactionrepository |
+  +-------------------------+
+  | + fileProcessingJob()   |
+  | + processFileStep()     |
+  | + fileItemReader()      |
+  | + transactionItemProcessor() |
+  | + transactionItemWriter() |
+  +-------------------------+
+      ▲
+      |
+      |
+      +-------------------+
+      | JobBuilderFactory | 
+      +-------------------+
+      | + get(jobName)    |  
+      +-------------------+
+               ▲
+               |
+               |
+      +-------------------+
+      | StepBuilderFactory|
+      +-------------------+
+      | + get(stepName)   |
+      +-------------------+
+
+
 Activity Diagram:
 
-Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
+1. Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
                   Start
                    |
@@ -424,7 +456,11 @@ Here's a high-level activity diagram that represents the flow of a typical trans
                    |
                    v
                   End
-                  2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
+
+
+2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
+                
+                Start
                   |
                   V
         [User Input Placeholder]
@@ -499,40 +535,9 @@ Here's a high-level activity diagram that represents the flow of a typical trans
                 |
                 V
                 End   
-    Class Diagram: of FileProcessingJobConfig
-    +-------------------------+
-    | FileProcessingJobConfig |
-    +-------------------------+
-    | - jobBuilderFactory     |
-    | - stepBuilderFactory    |
-    | - transactionrepository |
-    +-------------------------+
-    | + fileProcessingJob()   |
-    | + processFileStep()     |
-    | + fileItemReader()      |
-    | + transactionItemProcessor() |
-    | + transactionItemWriter() |
-    +-------------------------+
-        ▲
-        |
-        |
-        +-------------------+
-        | JobBuilderFactory | 
-        +-------------------+
-        | + get(jobName)    |  
-        +-------------------+
-                 ▲
-                 |
-                 |
-        +-------------------+
-        | StepBuilderFactory|
-        +-------------------+
-        | + get(stepName)   |
-        +-------------------+
 
 
 
 Contributors
-Your Name Muhammad Asif email - asif_inet@hotmail.com
-
+Muhammad Asif email - asif_inet@hotmail.com
 
