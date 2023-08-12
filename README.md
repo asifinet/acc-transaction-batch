@@ -381,17 +381,17 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
 Class Diagram:
 
 Here's a simplified class diagram based on the information you've provided about your application's entities:
-+------------------+
-|   Transaction    |
-+------------------+
-| id: Long         |
-| accountNumber: String |
-| trxAmount: BigDecimal |
-| description: String |
-| trxDate: LocalDate |
-| trxTime: LocalTime |
-| customerId: String |
-+------------------+
+      +-----------------------+
+      |   Transaction         |
+      +-----------------------+
+      | id: Long              |
+      | accountNumber: String |
+      | trxAmount: BigDecimal |
+      | description: String   |
+      | trxDate: LocalDate    |
+      | trxTime: LocalTime    |
+      | customerId: String    |
+      +-----------------------+
 
 Activity Diagram:
 
