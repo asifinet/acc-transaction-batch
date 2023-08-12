@@ -426,8 +426,7 @@ Activity Diagram:
                   End
 
 
-2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
-                Start
+2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
                   |
                   V
         [User Input Placeholder]
