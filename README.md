@@ -301,7 +301,7 @@ RESPONSE
     "customerId": "222"
 }
 
-5. GET Request to test concurrent update. 
+5. GET Request to test concurrent update 15 threads. 
  http://localhost:8011/api/transactions/concurrent-test
 
 RESPONSE
@@ -367,6 +367,130 @@ The application's configuration is located in the src/main/resources/application
 Troubleshooting
 If you encounter any issues while starting the application, please check the console logs for error messages.
 If you're having trouble with Postman, ensure you're using the correct endpoint URLs and authentication credentials.
+
+Q1, Please brief if you are using any Design pattern and why you choose it.
+
+A1. Following are the design pattrens being used to developed the solution.
+
+Design Pattern Utilized: Active Record, Repository
+The Active Record pattern is reflected in JPA entities, where an entity class represents both the data and the operations to manipulate that data. Additionally, the Repository pattern is used by JPA repositories to encapsulate the logic for querying and managing entities.
+
+Design Pattern Utilized: Builder and Factory in Spring Batch.
+
+
+Class Diagram:
+
+Here's a simplified class diagram based on the information you've provided about your application's entities:
++------------------+
+|   Transaction    |
++------------------+
+| id: Long         |
+| accountNumber: String |
+| trxAmount: BigDecimal |
+| description: String |
+| trxDate: LocalDate |
+| trxTime: LocalTime |
+| customerId: String |
++------------------+
+
+Activity Diagram:
+
+Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
+
+                  Start
+                   |
+                   v
+           [Request Received]
+                   |
+                   v
+        +----------------------+
+        |    Process Request   |
+        +----------------------+
+                   |
+                   v
+     +---------------------------+
+     | Start Reading input file  |
+     +---------------------------+
+                  |
+                  v              
+        +----------------------+
+        | Transform Transaction |
+        +----------------------+
+                   |
+                   v
+        +----------------------+
+        |   Save into H2 DB    |
+        +----------------------+
+                   |
+                   v
+                  End
+
+2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
+
+                  Start
+                   |
+                   v
+       [Request Received 
+        with input criteria]
+                   |
+                   v
+     +----------------------------+
+     | Fetch Request (placeholder) |
+     +----------------------------+
+                   |
+                   v
+  +---------------------------------+
+  | Get Data from H2 DB(placeholder) |
+  +---------------------------------+
+                  |
+                  v              
+     +---------------------------+
+     | Response in Paging format |
+     +---------------------------+
+                   |
+                   v
+                  End
+
+
+
+============================================================================
+Class Diagram: of FileProcessingJobConfig
+
++----------------------+
+| FileProcessingJobConfig |
++----------------------+
+| - jobBuilderFactory  |
+| - stepBuilderFactory |
+| - transactionrepository |
++----------------------+
+| + fileProcessingJob() |
+| + processFileStep()  |
+| + fileItemReader()   |
+| + transactionItemProcessor() |
+| + transactionItemWriter() |
++----------------------+
+
+       ▲
+       |
+       |
++--------------+
+| JobBuilderFactory |
++--------------+
+| + get(jobName)  |
++--------------+
+        ▲
+        |
+        |
++--------------+
+| StepBuilderFactory|
++--------------+
+| + get(stepName)  |
++--------------+
+
+
+
+
+
 Contributors
 Your Name asif_inet@hotmail.com
 
