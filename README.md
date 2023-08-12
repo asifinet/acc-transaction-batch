@@ -393,38 +393,6 @@ Here's a simplified class diagram based on the information you've provided about
 | customerId: String |
 +------------------+
 
-  Class Diagram: of FileProcessingJobConfig
-  +-------------------------+
-  | FileProcessingJobConfig |
-  +-------------------------+
-  | - jobBuilderFactory     |
-  | - stepBuilderFactory    |
-  | - transactionrepository |
-  +-------------------------+
-  | + fileProcessingJob()   |
-  | + processFileStep()     |
-  | + fileItemReader()      |
-  | + transactionItemProcessor() |
-  | + transactionItemWriter() |
-  +-------------------------+
-      ▲
-      |
-      |
-      +-------------------+
-      | JobBuilderFactory | 
-      +-------------------+
-      | + get(jobName)    |  
-      +-------------------+
-               ▲
-               |
-               |
-      +-------------------+
-      | StepBuilderFactory|
-      +-------------------+
-      | + get(stepName)   |
-      +-------------------+
-
-
 Activity Diagram:
 
 1. Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
@@ -459,7 +427,6 @@ Activity Diagram:
 
 
 2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
-                
                 Start
                   |
                   V
@@ -535,6 +502,36 @@ Activity Diagram:
                 |
                 V
                 End   
+    Class Diagram: of FileProcessingJobConfig
+    +-------------------------+
+    | FileProcessingJobConfig |
+    +-------------------------+
+    | - jobBuilderFactory     |
+    | - stepBuilderFactory    |
+    | - transactionrepository |
+    +-------------------------+
+    | + fileProcessingJob()   |
+    | + processFileStep()     |
+    | + fileItemReader()      |
+    | + transactionItemProcessor() |
+    | + transactionItemWriter() |
+    +-------------------------+
+        ▲
+        |
+        |
+        +-------------------+
+        | JobBuilderFactory | 
+        +-------------------+
+        | + get(jobName)    |  
+        +-------------------+
+                 ▲
+                 |
+                 |
+        +-------------------+
+        | StepBuilderFactory|
+        +-------------------+
+        | + get(stepName)   |
+        +-------------------+
 
 
 
