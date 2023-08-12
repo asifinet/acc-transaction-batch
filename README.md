@@ -395,7 +395,7 @@ Here's a simplified class diagram based on the information you've provided about
 
 Activity Diagram:
 
-1. Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
+Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
                   Start
                    |
@@ -424,9 +424,7 @@ Activity Diagram:
                    |
                    v
                   End
-
-
-2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
+                  2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
                   |
                   V
         [User Input Placeholder]
@@ -535,5 +533,6 @@ Activity Diagram:
 
 
 Contributors
-Muhammad Asif email - asif_inet@hotmail.com
+Your Name Muhammad Asif email - asif_inet@hotmail.com
+
 
