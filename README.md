@@ -380,6 +380,8 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
 
 1. Class Diagram:
     Here's a simplified class diagram based on the information you've provided about your application's entities:
+
+                                                    
                   +-----------------------+
                   |   Transaction         |
                   +-----------------------+
@@ -422,7 +424,7 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
                    v
                   End
 
-2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
+3. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
                         Start
                         |
                         V
@@ -453,7 +455,7 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
                         End
    
 
-3. Activity Diagram for updating data concurrently
+4. Activity Diagram for updating data concurrently
                                               
                                              Start
                                                 |
