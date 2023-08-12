@@ -22,7 +22,18 @@ Code need to be shared.
 Please brief if you are using any Design pattern and why you choose it.
 Documentation is required. (Class diagram and activity diagram)
 --------------------------------------------------------------------------
+Tech Stack
+--------------------------------------------------------------------------
+1. Java JDK 17.
+2. Spring boot.
+3. RestFul API.
+4. Spring Data JPA - Paging Repository.
+5. Spring Security.
+6. Spring Batch.
+7. h2 Database
+8. Intigration Testing Mockito.
 
+--------------------------------------------------------------------------
 Getting Started
 --=======================================================================--
 Prerequisites
@@ -142,8 +153,135 @@ RESPONSE
     "numberOfElements": 5,
     "empty": false
 }
+2. REQUEST
+URL - http://localhost:8011/api/transactions?accountNumber=8872838283&page=0&size=2   
+RESPONSE
+{
+    "content": [
+        {
+            "id": 1,
+            "accountNumber": "8872838283",
+            "trxAmount": 123.00,
+            "description": "FUND TRANSFER",
+            "trxDate": "2019-09-12",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        },
+        {
+            "id": 2,
+            "accountNumber": "8872838283",
+            "trxAmount": 1123.00,
+            "description": "ATM WITHDRWAL",
+            "trxDate": "2019-09-11",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "offset": 0,
+        "pageSize": 2,
+        "pageNumber": 0,
+        "paged": true,
+        "unpaged": false
+    },
+    "last": false,
+    "totalPages": 7,
+    "totalElements": 14,
+    "size": 2,
+    "number": 0,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "first": true,
+    "numberOfElements": 2,
+    "empty": false
+}
+3.REQUEST
+URL - http://localhost:8011/api/transactions?customerId=222&page=0&size=5
+RESPONSE
+{
+    "content": [
+        {
+            "id": 1,
+            "accountNumber": "8872838283",
+            "trxAmount": 123.00,
+            "description": "FUND TRANSFER",
+            "trxDate": "2019-09-12",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        },
+        {
+            "id": 2,
+            "accountNumber": "8872838283",
+            "trxAmount": 1123.00,
+            "description": "ATM WITHDRWAL",
+            "trxDate": "2019-09-11",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        },
+        {
+            "id": 3,
+            "accountNumber": "8872838283",
+            "trxAmount": 1223.00,
+            "description": "FUND TRANSFER",
+            "trxDate": "2019-10-11",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        },
+        {
+            "id": 4,
+            "accountNumber": "8872838283",
+            "trxAmount": 1233.00,
+            "description": "3rd Party FUND TRANSFER",
+            "trxDate": "2019-11-11",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        },
+        {
+            "id": 5,
+            "accountNumber": "8872838283",
+            "trxAmount": 1243.00,
+            "description": "3rd Party FUND TRANSFER",
+            "trxDate": "2019-08-11",
+            "trxTime": "11:11:11",
+            "customerId": "222"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 5,
+        "unpaged": false,
+        "paged": true
+    },
+    "last": false,
+    "totalElements": 31,
+    "totalPages": 7,
+    "size": 5,
+    "number": 0,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "first": true,
+    "numberOfElements": 5,
+    "empty": false
+}
 
-2. /api/transactions/updatedescription  -->  For Update        PUT
+4. /api/transactions/updatedescription  -->  For Update        PUT
 REQUEST
 URL - http://localhost:8011/api/transactions/updatedescription/
 BODY - 
