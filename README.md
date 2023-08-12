@@ -459,7 +459,8 @@ Here's a simplified class diagram based on the information you've provided about
             V
         [User Initiates Concurrent Update]
                     |
-                    V                                                                                                                                                                             [Check If Data Exists]                                                                                                                                                                    |                                                                                                                                                                                        |   [Yes]
+                    V                                                                                                                                                                             [Check If Data Exists]
+        |                                                                                                                                                                                        |   [Yes]
         |   |
         |   V
         |   [Acquire Pessimistic Lock]
