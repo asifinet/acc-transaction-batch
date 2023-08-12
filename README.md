@@ -457,9 +457,9 @@ Here's a simplified class diagram based on the information you've provided about
 
 3. Activity Diagram for updating data concurrently
           
- Start
-|
-V
+         Start
+            |
+            V
 [User Initiates Concurrent Update]
 |
 V
