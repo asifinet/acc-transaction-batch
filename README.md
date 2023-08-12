@@ -422,10 +422,7 @@ Here's a simplified class diagram based on the information you've provided about
                    |
                    v
                   End
-
-2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
-                
-                 Start
+                  2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.Start
                   |
                   V
         [User Input Placeholder]
