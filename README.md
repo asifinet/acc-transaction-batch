@@ -73,12 +73,12 @@ Enter the username and password configured in your application properties.
 
 Click Send.
 
-Example Request:
-1. /api/transactions                    -->  For Retrival      GET
-REQUEST
-URL - http://localhost:8011/api/transactions?description=FUND TRANSFER&page=0&size=5
-
-RESPONSE
+                        Example Request:
+                        1. /api/transactions                    -->  For Retrival      GET
+                        REQUEST
+                        URL - http://localhost:8011/api/transactions?description=FUND TRANSFER&page=0&size=5
+                        
+                        RESPONSE
                         {
                             "content": [
                                 {
@@ -153,9 +153,9 @@ RESPONSE
                             "numberOfElements": 5,
                             "empty": false
                         }
-2. REQUEST
-URL - http://localhost:8011/api/transactions?accountNumber=8872838283&page=0&size=2   
-RESPONSE
+              2. REQUEST
+              URL - http://localhost:8011/api/transactions?accountNumber=8872838283&page=0&size=2   
+              RESPONSE
                     {
                         "content": [
                             {
@@ -203,9 +203,9 @@ RESPONSE
                         "numberOfElements": 2,
                         "empty": false
                     }
-3.REQUEST
-URL - http://localhost:8011/api/transactions?customerId=222&page=0&size=5
-RESPONSE
+              3.REQUEST
+              URL - http://localhost:8011/api/transactions?customerId=222&page=0&size=5
+              RESPONSE
                     {
                         "content": [
                             {
