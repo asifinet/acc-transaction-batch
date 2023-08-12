@@ -378,57 +378,26 @@ The Active Record pattern is reflected in JPA entities, where an entity class re
 Design Pattern Utilized: Builder and Factory in Spring Batch.
 
 
-1. Class Diagram: 
-   Here's a simplified class diagram based on the information you've provided about your application's entities:
+Class Diagram:
 
-            +-----------------------+
-            |   Transaction         |
-            +-----------------------+
-            | id: Long              |
-            | accountNumber: String |
-            | trxAmount: BigDecimal |
-            | description: String   |
-            | trxDate: LocalDate    |
-            | trxTime: LocalTime    |
-            | customerId: String    |
-            +-----------------------+
- 
-2. Class Diagram: of FileProcessingJobConfig
-  
-  +-------------------------+
-  | FileProcessingJobConfig |
-  +-------------------------+
-  | - jobBuilderFactory     |
-  | - stepBuilderFactory    |
-  | - transactionrepository |
-  +-------------------------+
-  | + fileProcessingJob()   |
-  | + processFileStep()     |
-  | + fileItemReader()      |
-  | + transactionItemProcessor() |
-  | + transactionItemWriter() |
-  +-------------------------+
-      ▲
-      |
-      |
-      +-------------------+
-      | JobBuilderFactory | 
-      +-------------------+
-      | + get(jobName)    |  
-      +-------------------+
-               ▲
-               |
-               |
-      +-------------------+
-      | StepBuilderFactory|
-      +-------------------+
-      | + get(stepName)   |
-      +-------------------+
+Here's a simplified class diagram based on the information you've provided about your application's entities:
++------------------+
+|   Transaction    |
++------------------+
+| id: Long         |
+| accountNumber: String |
+| trxAmount: BigDecimal |
+| description: String |
+| trxDate: LocalDate |
+| trxTime: LocalTime |
+| customerId: String |
++------------------+
 
- 1. Activity Diagram:
-    Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:              
-               
-                Start
+
+Activity Diagram:
+Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
+
+                  Start
                    |
                    v
            [Request Received]
