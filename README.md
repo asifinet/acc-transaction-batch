@@ -378,7 +378,7 @@ The Active Record pattern is reflected in JPA entities, where an entity class re
 Design Pattern Utilized: Builder and Factory in Spring Batch.
 
 
-Class Diagram: 
+1. Class Diagram: 
    Here's a simplified class diagram based on the information you've provided about your application's entities:
 
             +-----------------------+
@@ -393,7 +393,39 @@ Class Diagram:
             | customerId: String    |
             +-----------------------+
  
- Activity Diagram:
+2. Class Diagram: of FileProcessingJobConfig
+  
+  +-------------------------+
+  | FileProcessingJobConfig |
+  +-------------------------+
+  | - jobBuilderFactory     |
+  | - stepBuilderFactory    |
+  | - transactionrepository |
+  +-------------------------+
+  | + fileProcessingJob()   |
+  | + processFileStep()     |
+  | + fileItemReader()      |
+  | + transactionItemProcessor() |
+  | + transactionItemWriter() |
+  +-------------------------+
+      ▲
+      |
+      |
+      +-------------------+
+      | JobBuilderFactory | 
+      +-------------------+
+      | + get(jobName)    |  
+      +-------------------+
+               ▲
+               |
+               |
+      +-------------------+
+      | StepBuilderFactory|
+      +-------------------+
+      | + get(stepName)   |
+      +-------------------+
+
+ 1. Activity Diagram:
     Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:              
                
                 Start
@@ -454,11 +486,14 @@ Class Diagram:
             |
             V
             End
-            3. Activity Diagram for updating data concurrently
-            Start
+
+
+3. Activity Diagram for updating data concurrently
+          
+          Start
             |
             V
-    [User Initiates Concurrent Update]
+[User Initiates Concurrent Update]
                 |
                 V
     [Check If Data Exists]
@@ -501,37 +536,6 @@ Class Diagram:
                 |
                 V
                 End   
-    Class Diagram: of FileProcessingJobConfig
-    +-------------------------+
-    | FileProcessingJobConfig |
-    +-------------------------+
-    | - jobBuilderFactory     |
-    | - stepBuilderFactory    |
-    | - transactionrepository |
-    +-------------------------+
-    | + fileProcessingJob()   |
-    | + processFileStep()     |
-    | + fileItemReader()      |
-    | + transactionItemProcessor() |
-    | + transactionItemWriter() |
-    +-------------------------+
-        ▲
-        |
-        |
-        +-------------------+
-        | JobBuilderFactory | 
-        +-------------------+
-        | + get(jobName)    |  
-        +-------------------+
-                 ▲
-                 |
-                 |
-        +-------------------+
-        | StepBuilderFactory|
-        +-------------------+
-        | + get(stepName)   |
-        +-------------------+
-
 
 
 Contributors
