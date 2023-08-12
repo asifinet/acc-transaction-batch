@@ -4,7 +4,7 @@ Accounts Transaction Batch
 Spring Batch Transaction Processing
 This Spring Boot application demonstrates batch processing and RESTful API.
 
-Requirenment requested as follows.
+#Requirenment requested as follows.
 -------------------------------------------------------------------
 Prepare a batch job to consume the attached text file.
 Prepare RESTFUL API to (1) Retrieve & (2) Update (description) the records
@@ -22,7 +22,7 @@ Code need to be shared.
 Please brief if you are using any Design pattern and why you choose it.
 Documentation is required. (Class diagram and activity diagram)
 --------------------------------------------------------------------------
-Tech Stack
+#Tech Stack
 --------------------------------------------------------------------------
 1. Java JDK 17.
 2. Spring boot.
@@ -34,7 +34,7 @@ Tech Stack
 8. Intigration Testing Mockito.
 
 --------------------------------------------------------------------------
-Getting Started
+#Getting Started
 --=======================================================================--
 Prerequisites
 Java JDK 11 or later
@@ -42,7 +42,7 @@ Apache Maven
 Postman (for testing)
 
 
-Setup to run.
+#Setup to run.
 First Clone the repository:
 
 git clone https://github.com/asifinet/acc-transaction-batch.git
@@ -73,7 +73,7 @@ Enter the username and password configured in your application properties.
 
 Click Send.
 
-                        Example Request:
+                      #  Example Request:
                         1. /api/transactions                    -->  For Retrival      GET
                         REQUEST
                         URL - http://localhost:8011/api/transactions?description=FUND TRANSFER&page=0&size=5
