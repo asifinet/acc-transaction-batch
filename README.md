@@ -500,35 +500,35 @@ Here's a high-level activity diagram that represents the flow of a typical trans
                 V
                 End   
     Class Diagram: of FileProcessingJobConfig
-    +----------------------+
+    +-------------------------+
     | FileProcessingJobConfig |
-    +----------------------+
-    | - jobBuilderFactory  |
-    | - stepBuilderFactory |
+    +-------------------------+
+    | - jobBuilderFactory     |
+    | - stepBuilderFactory    |
     | - transactionrepository |
-    +----------------------+
-    | + fileProcessingJob() |
-    | + processFileStep()  |
-    | + fileItemReader()   |
+    +-------------------------+
+    | + fileProcessingJob()   |
+    | + processFileStep()     |
+    | + fileItemReader()      |
     | + transactionItemProcessor() |
     | + transactionItemWriter() |
-    +----------------------+
+    +-------------------------+
         ▲
         |
         |
- +-------------------+
- | JobBuilderFactory | 
- +-------------------+
- | + get(jobName)    |  
- +-------------------+
-        ▲
-        |
-        |
- +-------------------+
- | StepBuilderFactory|
- +-------------------+
- | + get(stepName)   |
- +-------------------+
+        +-------------------+
+        | JobBuilderFactory | 
+        +-------------------+
+        | + get(jobName)    |  
+        +-------------------+
+                 ▲
+                 |
+                 |
+        +-------------------+
+        | StepBuilderFactory|
+        +-------------------+
+        | + get(stepName)   |
+        +-------------------+
 
 
 
