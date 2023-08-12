@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Version;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,6 @@ public class Transaction implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
 	// Getters and setters
 	private String accountNumber;
 	private BigDecimal trxAmount;
@@ -33,5 +33,9 @@ public class Transaction implements Serializable {
 	private LocalDate trxDate;
 	private LocalTime trxTime;
 	private String customerId;
+	
+	@Version
+    private Long version;
+	
 
 }

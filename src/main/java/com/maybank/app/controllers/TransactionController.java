@@ -1,5 +1,13 @@
 package com.maybank.app.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -55,4 +63,45 @@ import com.maybank.app.services.TransactionService;
 	    	Transaction updatedTransaction = transactionService.updateTransaction(updatemodel);
 	        return ResponseEntity.ok(updatedTransaction);
 	    }
+	    
+	    
+	    @GetMapping("/concurrent-test")
+	    public ResponseEntity<String> concurrentTest() {
+	        int numThreads = 50; // Number of concurrent threads
+
+	        ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
+	        List<Callable<String>> tasks = new ArrayList<>();
+
+	        // Create concurrent tasks that update the same transaction concurrently
+	        for (int i = 0; i < numThreads; i++) {
+	            tasks.add(() -> {
+	                UpdateModelRequest request = new UpdateModelRequest();
+	                request.setId(22L); // Update the transaction with ID 1
+	                request.setDescription("Concurrent Update " + Thread.currentThread().getId());
+
+	                ResponseEntity<Transaction> response = updateTransaction(request);
+	                return "Thread " + Thread.currentThread().getId() + " - " + response.getBody().getDescription();
+	            });
+	        }
+
+	        try {
+	            List<Future<String>> results = executorService.invokeAll(tasks);
+	            executorService.shutdown();
+                   
+	             System.out.println("Print the result "+ results);
+	             
+	            StringBuilder responseText = new StringBuilder();
+	            for (Future<String> result : results) {
+	            	   System.out.println("Line Number95 - " + result.get());
+	                responseText.append(result.get()).append("\n");
+	            }
+	            System.out.println("Line Number 97 - "+ results);
+	            return ResponseEntity.ok(responseText.toString());
+	        } catch (InterruptedException | ExecutionException e) {
+	            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during concurrent test.");
+	        }
+	    }
+	    
+	    
+	    
 	}
