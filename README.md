@@ -381,17 +381,18 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
 1. Class Diagram:
 
 Here's a simplified class diagram based on the information you've provided about your application's entities:
-          +-----------------------+
-          |   Transaction         |
-          +-----------------------+
-          | id: Long              |
-          | accountNumber: String |
-          | trxAmount: BigDecimal |
-          | description: String   |
-          | trxDate: LocalDate    |
-          | trxTime: LocalTime    |
-          | customerId: String    |
-          +-----------------------+
+
+                          +-----------------------+
+                          |   Transaction         |
+                          +-----------------------+
+                          | id: Long              |
+                          | accountNumber: String |
+                          | trxAmount: BigDecimal |
+                          | description: String   |
+                          | trxDate: LocalDate    |
+                          | trxTime: LocalTime    |
+                          | customerId: String    |
+                          +-----------------------+
 
 
 
@@ -432,7 +433,7 @@ Here's a simplified class diagram based on the information you've provided about
 
 
 
-    1. Activity Diagram:
+    3. Activity Diagram:
       Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
                   Start
@@ -463,7 +464,9 @@ Here's a simplified class diagram based on the information you've provided about
                    v
                   End
 
-3. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
+4. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
+
+   
                                     Start
                                     |
                                     V
@@ -493,7 +496,7 @@ Here's a simplified class diagram based on the information you've provided about
                                     V
                                     End
 
-4. Activity Diagram for updating data concurrently
+6. Activity Diagram for updating data concurrently
                                               
                                              Start
                                                 |
