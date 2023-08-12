@@ -430,8 +430,7 @@ Here's a high-level activity diagram that represents the flow of a typical trans
                   Start
                    |
                    v
-       [Request Received 
-        with input criteria]
+ [Request Received with input criteria]
                    |
                    v
      +-----------------------------+
