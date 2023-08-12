@@ -378,7 +378,20 @@ The Active Record pattern is reflected in JPA entities, where an entity class re
 Design Pattern Utilized: Builder and Factory in Spring Batch.
 
 
+Class Diagram:
 
+Here's a simplified class diagram based on the information you've provided about your application's entities:
+      +-----------------------+
+      |   Transaction         |
+      +-----------------------+
+      | id: Long              |
+      | accountNumber: String |
+      | trxAmount: BigDecimal |
+      | description: String   |
+      | trxDate: LocalDate    |
+      | trxTime: LocalTime    |
+      | customerId: String    |
+      +-----------------------+
       Activity Diagram:
       Here's a high-level activity diagram that represents the flow of a typical transaction retrieval process:
 
@@ -409,19 +422,6 @@ Design Pattern Utilized: Builder and Factory in Spring Batch.
                    |
                    v
                   End
-                  Class Diagram:
-Here's a simplified class diagram based on the information you've provided about your application's entities:
-      +-----------------------+
-      |   Transaction         |
-      +-----------------------+
-      | id: Long              |
-      | accountNumber: String |
-      | trxAmount: BigDecimal |
-      | description: String   |
-      | trxDate: LocalDate    |
-      | trxTime: LocalTime    |
-      | customerId: String    |
-      +-----------------------+
 
 2. Activity Diagram for retriving data by  placeholder = CustomerId,Description or AccountNumber.
                 
